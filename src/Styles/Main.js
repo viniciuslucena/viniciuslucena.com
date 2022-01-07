@@ -19,7 +19,8 @@ export const Main = styled.main`
   }
 
   .main__description__subtitle {
-    font-size: 24px;
+    font-size: 16px;
+    font-weight: 500;
     color: var(--color-text-secondary);
   }
 `;

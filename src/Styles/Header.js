@@ -19,14 +19,36 @@ export const HeaderStyles = styled.header`
     li {
       margin-right: 50px;
       cursor: pointer;
-      padding: 10px;
+      padding: 20px 0px;
       color: var(--color-text-secondary);
       font-size: 14px;
+      position: relative;
+      display: inline-block;
 
       transition: color 0.2s ease;
 
       &:hover {
         color: var(--white);
+      }
+
+      &:after {
+        content: '';
+        display: block;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 2px;
+        background-color: var(--white);
+        transform: scaleX(0);
+        transform-origin: bottom right;
+
+        transition: transform 0.2s ease;
+      }
+
+      &:hover:after {
+        transform: scaleX(1);
+        transform-origin: bottom left;
       }
     }
   }
