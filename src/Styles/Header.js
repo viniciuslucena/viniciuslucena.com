@@ -6,6 +6,8 @@ export const HeaderStyles = styled.header`
   align-items: center;
   padding: 10px 0;
   height: 110px;
+  max-width: 90%;
+  margin: 0 auto;
 
   .logo {
     height: 80px;
@@ -19,16 +21,23 @@ export const HeaderStyles = styled.header`
     li {
       margin-right: 50px;
       cursor: pointer;
-      padding: 20px 0px;
-      color: var(--color-text-secondary);
       font-size: 14px;
       position: relative;
       display: inline-block;
+      padding: 20px 0px;
 
       transition: color 0.2s ease;
 
+      a {
+        padding: 20px 0px;
+        text-decoration: none;
+        color: var(--color-text-secondary);
+      }
+
       &:hover {
-        color: var(--white);
+        a {
+          color: var(--white);
+        }
       }
 
       &:after {

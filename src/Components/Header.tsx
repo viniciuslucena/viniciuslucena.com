@@ -17,7 +17,9 @@ export const Header = () => {
       <nav>
         <ul>
           {pages.map((page) => (
-            <li key={page}>{page.toUpperCase()}</li>
+            <li key={page}>
+              <Link href={page.toLowerCase()}>{page.toUpperCase()}</Link>
+            </li>
           ))}
         </ul>
       </nav>

@@ -9,11 +9,19 @@ export const GlobalStyle = createGlobalStyle`
     font-display: swap;
   }
 
+  @font-face {
+    font-family: "Neuzeit Grotesk";
+    src: url("/fonts/NeuzeitGro-Bol.ttf");
+    font-style: bold;
+    font-weight: 700;
+    font-display: swap;
+  }
+
   :root {
     --background: #08070B;
     --white: #FFFFFF;
     
-    --color-text-secondary: #8f9ba8;
+    --color-text-primary: #8f9ba8;
   }
 
   * {
@@ -24,7 +32,7 @@ export const GlobalStyle = createGlobalStyle`
 
   body {
     background-color: var(--background);
-    color: var(--white);
+    color: var(--color-text-primary);
     font-family: 'Biotif';
   }
 `;
