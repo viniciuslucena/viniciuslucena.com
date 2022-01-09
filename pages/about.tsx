@@ -6,9 +6,17 @@ import { jobs } from '../data/about';
 import { Container } from '../src/Styles/Container';
 import { PersonalResume, Career } from '../src/Styles/About';
 
+import { HiOutlineFolderDownload } from 'react-icons/hi';
+import Head from 'next/head';
+
 const About = () => {
   return (
     <>
+      <Head>
+        <title>About // Vinícius Lucena</title>
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+      </Head>
+
       <Header />
       <Container>
         <Title label="About. Sobre." from="#5b7fff" to="#33ccfc" />
@@ -17,12 +25,19 @@ const About = () => {
             <img src="/images/avatar.jpeg" alt="Avatar" />
           </div>
           <div className="resume">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab, dolore et! Commodi
-            obcaecati ab eius possimus. Veritatis, itaque assumenda repudiandae sint placeat beatae
-            commodi veniam iure inventore autem, labore quaerat?Lorem ipsum dolor sit amet
-            consectetur adipisicing elit. Ab, dolore et! Commodi obcaecati ab eius possimus.
-            Veritatis, itaque assumenda repudiandae sint placeat beatae commodi veniam iure
-            inventore autem, labore quaerat?
+            <p className="resume__text">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab, dolore et! Commodi
+              obcaecati ab eius possimus. Veritatis, itaque assumenda repudiandae sint placeat
+              beatae commodi veniam iure inventore autem, labore quaerat?Lorem ipsum dolor sit amet
+              consectetur adipisicing elit. Ab, dolore et! Commodi obcaecati ab eius possimus.
+              Veritatis, itaque assumenda repudiandae sint placeat beatae commodi veniam iure
+              inventore autem, labore quaerat?
+            </p>
+            <div className="resume__btn">
+              <a href="./resume/cv-vinicius-lucena.pdf" download="CV Vinícius Lucena">
+                <HiOutlineFolderDownload /> Download CV
+              </a>
+            </div>
           </div>
         </PersonalResume>
         <Career>

@@ -9,7 +9,7 @@ const Blog = () => {
     <>
       <Header />
       <Container>
-        <Title label="Blog." from="#fdc639" to="#ff7c60" />
+        <Title label="Tips. Tutorials. Notes." from="#fdc639" to="#ff7c60" />
       </Container>
       <Footer />
     </>

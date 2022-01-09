@@ -6,9 +6,16 @@ import { Footer } from '../src/Components/Footer';
 import { Container } from '../src/Styles/Container';
 import { Main } from '../src/Styles/Main';
 
+import Head from 'next/head';
+
 const Home: NextPage = () => {
   return (
     <>
+      <Head>
+        <title>Index // Vinícius Lucena</title>
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+      </Head>
+
       <Header />
       <Container>
         <Main>

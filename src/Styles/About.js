@@ -12,6 +12,31 @@ export const PersonalResume = styled.div`
     margin-left: 25px;
     line-height: 32px;
   }
+
+  .resume__btn {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+
+    a {
+      display: flex;
+      align-items: center;
+      color: var(--white);
+      text-decoration: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+
+      transition: background 0.2s ease;
+
+      svg {
+        margin-right: 10px;
+      }
+
+      &:hover {
+        background-color: var(--grey);
+      }
+    }
+  }
 `;
 
 export const Career = styled.div`
