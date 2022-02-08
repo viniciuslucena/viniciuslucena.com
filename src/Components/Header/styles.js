@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 export const HeaderStyles = styled.header`
   display: flex;
@@ -59,6 +59,17 @@ export const HeaderStyles = styled.header`
         transform: scaleX(1);
         transform-origin: bottom left;
       }
+    }
+  }
+`;
+
+export const SettingsIcon = styled.div`
+  svg {
+    transition: color 0.2s ease;
+
+    &:hover {
+      color: var(--white);
+      transform: rotate(25deg);
     }
   }
 `;

@@ -1,11 +1,19 @@
+import { useState } from 'react';
+
 import Link from 'next/link';
 
 import { BsGear } from 'react-icons/bs';
 
-import { HeaderStyles } from '../Styles/Header';
+import { HeaderStyles, SettingsIcon } from './styles';
 
 export const Header = () => {
   const pages = ['About', 'Skills', 'Projects', 'Blog'];
+  const [settingsOpen, setSettingsOpen] = useState(false);
+
+  const handleSettings = () => {
+    setSettingsOpen(!settingsOpen);
+  };
+
   return (
     <HeaderStyles>
       <Link href="/">
@@ -24,9 +32,9 @@ export const Header = () => {
         </ul>
       </nav>
 
-      <div>
+      <SettingsIcon onClick={handleSettings}>
         <BsGear />
-      </div>
+      </SettingsIcon>
     </HeaderStyles>
   );
 };

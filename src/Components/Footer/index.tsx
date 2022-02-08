@@ -1,6 +1,6 @@
 import { FiGithub, FiLinkedin, FiInstagram } from 'react-icons/fi';
 
-import { FooterStyles } from '../Styles/Footer';
+import { FooterStyles } from './styles';
 
 const links = [
   {

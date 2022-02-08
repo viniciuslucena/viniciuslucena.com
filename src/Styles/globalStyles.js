@@ -17,11 +17,19 @@ export const GlobalStyle = createGlobalStyle`
     font-display: swap;
   }
 
+  @font-face {
+    font-family: "Rubik";
+    src: url("/fonts/Rubik.ttf");
+    font-style: bold;
+    font-weight: 700;
+    font-display: swap;
+  }
+
   :root {
     --background: #08070B;
     --white: #FFFFFF;
     --grey: #212024;
-    
+
     --color-text-primary: #8f9ba8;
   }
 
