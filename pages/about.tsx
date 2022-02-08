@@ -19,7 +19,7 @@ const About = () => {
 
       <Header />
       <Container>
-        <Title label="About. Sobre." from="#5b7fff" to="#33ccfc" />
+        <Title label="About. Resume." from="#5b7fff" to="#33ccfc" />
         <PersonalResume>
           <div className="resume__image">
             <img src="/images/avatar.jpeg" alt="Avatar" />
@@ -44,8 +44,8 @@ const About = () => {
           <h3 className="second__title">Career</h3>
           <ul className="jobs-list">
             {jobs.map((job, index) => (
-              <>
-                <li key={index}>
+              <div key={index}>
+                <li>
                   <p className="jobs-list__title">{job.jobTitle}</p>
                   <a
                     href={job.companyUrl}
@@ -78,7 +78,7 @@ const About = () => {
                       : 'Present'}
                   </p>
                 </li>
-              </>
+              </div>
             ))}
           </ul>
         </Career>

@@ -4,12 +4,16 @@ type TitleProps = {
   label: string;
   from: string;
   to: string;
+  subtitle?: string;
 };
 
-export const Title = ({ label, from, to }: TitleProps) => {
+export const Title = ({ label, from, to, subtitle }: TitleProps) => {
+  const TitleWrapper = styled.div`
+    margin-bottom: 35px;
+  `;
   const TitleStyle = styled.h2`
-    font-family: 'Neuzeit Grotesk';
-    font-size: 48px;
+    font-family: 'Rubik';
+    font-size: 62px;
     background-color: red;
     background-image: linear-gradient(${from}, ${to});
     background-size: 100%;
@@ -20,8 +24,18 @@ export const Title = ({ label, from, to }: TitleProps) => {
     -moz-text-fill-color: transparent;
     -webkit-font-smoothing: antialiased;
     -moz-font-smoothing: antialiased;
-    margin-bottom: 35px;
+    margin-bottom: 15px;
   `;
 
-  return <TitleStyle>{label}</TitleStyle>;
+  const SubtitleStyle = styled.p`
+    color: var(--color-text-primary);
+    font-size: 18px;
+  `;
+
+  return (
+    <TitleWrapper>
+      <TitleStyle>{label}</TitleStyle>
+      <SubtitleStyle>{subtitle}</SubtitleStyle>
+    </TitleWrapper>
+  );
 };
