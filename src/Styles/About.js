@@ -46,17 +46,26 @@ export const PersonalResume = styled.div`
       margin-bottom: 25px;
       img {
         width: 100%;
+        /* height: 310px; */
+        aspect-ratio: 1;
       }
+    }
+
+    .resume {
+      margin-left: 0;
     }
 
     .resume__text {
       text-align: left;
+      border-left: 4px solid var(--grey);
+      padding-left: 20px;
     }
 
     .resume__btn {
       display: flex;
       align-items: center;
       justify-content: start;
+      margin-top: 20px;
 
       a {
         padding: 0;

@@ -75,6 +75,7 @@ export const HeaderStylesMobile = styled.header`
     max-width: 90%;
     margin: 0 auto;
     padding: 10px 0;
+    transition: all 0.2s ease;
 
     .logo {
       width: 50px;
@@ -119,6 +120,30 @@ export const HeaderStylesMobile = styled.header`
         transform-origin: bottom left;
       }
     }
+
+    .language {
+      display: flex;
+      justify-content: center;
+      width: 100%;
+
+      .flag {
+        margin-top: 30px;
+        width: 25px;
+        filter: grayscale(1);
+
+        &.active {
+          filter: grayscale(0);
+        }
+
+        & + .flag {
+          margin-left: 20px;
+        }
+      }
+    }
+  }
+
+  @media only screen and (min-width: 769px) {
+    display: none;
   }
 `;
 

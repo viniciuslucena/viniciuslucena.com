@@ -52,7 +52,8 @@ export const ProjectWrapper = styled.div`
 
     .project-description {
       text-align: left;
-      padding: 20px 0;
+      padding: 20px;
+      width: 100%;
 
       h1 {
         font-size: 26px;

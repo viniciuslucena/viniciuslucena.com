@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 
 import Link from 'next/link';
 
@@ -6,19 +6,13 @@ import { BsGear } from 'react-icons/bs';
 import { GiHamburgerMenu } from 'react-icons/gi';
 
 import { HeaderStyles, SettingsIcon, HeaderStylesMobile } from './styles';
+import { GeneralContext } from '../../Context/general';
 
 export const Header = () => {
   const pages = ['About', 'Skills', 'Projects', 'Blog'];
   const [settingsOpen, setSettingsOpen] = useState(false);
   const [openMenu, setOpenMenu] = useState(false);
-
-  const handleSettings = () => {
-    setSettingsOpen(!settingsOpen);
-  };
-
-  const handleOpenMenu = () => {
-    setOpenMenu(!openMenu);
-  };
+  const { language, setLanguage } = useContext(GeneralContext);
 
   return (
     <>
@@ -62,6 +56,18 @@ export const Header = () => {
                 </li>
               ))}
             </ul>
+            <div className="language">
+              <img
+                src="./icons/br-flag.jpeg"
+                className={`flag ${language === 'pt-BR' && 'active'}`}
+                onClick={() => setLanguage('pt-BR')}
+              />
+              <img
+                src="./icons/en-flag.jpeg"
+                className={`flag ${language === 'en-US' && 'active'}`}
+                onClick={() => setLanguage('en-US')}
+              />
+            </div>
           </div>
         )}
       </HeaderStylesMobile>

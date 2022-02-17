@@ -19,6 +19,7 @@ export const Main = styled.main`
   }
 
   .main__description__subtitle {
+    margin-top: 15px;
     font-size: 16px;
     font-weight: 500;
     color: var(--color-text-secondary);
