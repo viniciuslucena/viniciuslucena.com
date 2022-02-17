@@ -11,6 +11,11 @@ export const PersonalResume = styled.div`
   .resume {
     margin-left: 25px;
     line-height: 32px;
+
+    span {
+      color: var(--white);
+      font-weight: bold;
+    }
   }
 
   .resume__btn {

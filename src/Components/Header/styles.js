@@ -62,6 +62,25 @@ export const HeaderStyles = styled.header`
     }
   }
 
+  .language {
+    display: flex;
+    justify-content: center;
+
+    .flag {
+      margin-top: 30px;
+      width: 25px;
+      filter: grayscale(1);
+
+      &.active {
+        filter: grayscale(0);
+      }
+
+      & + .flag {
+        margin-left: 20px;
+      }
+    }
+  }
+
   @media only screen and (max-width: 768px) {
     display: none;
   }
