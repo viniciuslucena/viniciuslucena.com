@@ -33,15 +33,25 @@ const About = () => {
           <div className="resume">
             {language === 'pt-BR' ? (
               <p className="resume__text">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab, dolore et! Commodi
-                obcaecati ab eius possimus. Veritatis, itaque assumenda repudiandae sint placeat
-                beatae commodi veniam iure inventore autem, labore quaerat?Lorem ipsum dolor sit
-                amet consectetur adipisicing elit. Ab, dolore et! Commodi obcaecati ab eius
-                possimus. Veritatis, itaque assumenda repudiandae sint placeat beatae commodi veniam
-                iure inventore autem, labore quaerat?
+                Olá 👋, <span>eu sou o Vinícius</span>. <br />
+                Sou estudante do curso de Bacharelado em Ciência da Computação na UFAPE e trabalho
+                como desenvolvedor desde 2021.
+                <br />
+                <br />
+                Atualmente trabalho como <span>desenvolvedor front-end</span> na Innvo Digital, uma
+                consultoria que presta serviços para diversas empresas, incluindo a <span>C&A</span>
+                , que é onde eu trabalho diariamente.
               </p>
             ) : (
-              <p className="resume__text">Teste</p>
+              <p className="resume__text">
+                Hey 👋, <span>I&apos;m Vinícius</span>. <br />
+                I am a student of the Bachelor&apos;s Degree in Computer Science at UFAPE and I have
+                been working as a developer since 2021.
+                <br />
+                <br />I currently work as a <span>front-end developer</span> at Innvo Digital, a
+                consultancy that provides services to several companies, including <span>C&A</span>,
+                which is where I work daily.
+              </p>
             )}
             <div className="resume__btn">
               <a href="./resume/cv-vinicius-lucena.pdf" download="CV Vinícius Lucena">
@@ -51,7 +61,9 @@ const About = () => {
           </div>
         </PersonalResume>
         <Career>
-          <h3 className="second__title">Career</h3>
+          <h3 className="second__title">
+            {language === 'pt-BR' ? 'Histórico Profissional' : 'Career'}
+          </h3>
           <ul className="jobs-list">
             {jobs.map((job, index) => (
               <div key={index}>

@@ -2,17 +2,19 @@ import { useContext, useState } from 'react';
 
 import Link from 'next/link';
 
-import { BsGear } from 'react-icons/bs';
 import { GiHamburgerMenu } from 'react-icons/gi';
 
-import { HeaderStyles, SettingsIcon, HeaderStylesMobile } from './styles';
+import { HeaderStyles, HeaderStylesMobile } from './styles';
 import { GeneralContext } from '../../Context/general';
 
 export const Header = () => {
-  const pages = ['About', 'Skills', 'Projects', 'Blog'];
-  const [settingsOpen, setSettingsOpen] = useState(false);
-  const [openMenu, setOpenMenu] = useState(false);
   const { language, setLanguage } = useContext(GeneralContext);
+  const [openMenu, setOpenMenu] = useState(false);
+  // const pages =
+  //   language === 'pt-BR'
+  //     ? ['Sobre', 'Skills', 'Projetos', 'Blog']
+  //     : ['About', 'Skills', 'Projects', 'Blog'];
+  const pages = ['About', 'Skills', 'Projects', 'Blog'];
 
   return (
     <>
@@ -33,9 +35,18 @@ export const Header = () => {
           </ul>
         </nav>
 
-        <SettingsIcon onClick={() => setSettingsOpen(!settingsOpen)}>
-          <BsGear className={settingsOpen ? 'active' : null} />
-        </SettingsIcon>
+        <div className="language">
+          <img
+            src="./icons/br-flag.jpeg"
+            className={`flag ${language === 'pt-BR' && 'active'}`}
+            onClick={() => setLanguage('pt-BR')}
+          />
+          <img
+            src="./icons/en-flag.jpeg"
+            className={`flag ${language === 'en-US' && 'active'}`}
+            onClick={() => setLanguage('en-US')}
+          />
+        </div>
       </HeaderStyles>
 
       <HeaderStylesMobile>
