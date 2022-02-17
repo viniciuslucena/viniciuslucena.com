@@ -23,4 +23,11 @@ export const Main = styled.main`
     font-weight: 500;
     color: var(--color-text-secondary);
   }
+
+  @media only screen and (max-width: 768px) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
 `;

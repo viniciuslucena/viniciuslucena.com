@@ -1,4 +1,4 @@
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 
 export const HeaderStyles = styled.header`
   display: flex;
@@ -61,6 +61,65 @@ export const HeaderStyles = styled.header`
       }
     }
   }
+
+  @media only screen and (max-width: 768px) {
+    display: none;
+  }
+`;
+
+export const HeaderStylesMobile = styled.header`
+  .closedMenu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 90%;
+    margin: 0 auto;
+    padding: 10px 0;
+
+    .logo {
+      width: 50px;
+    }
+  }
+
+  .openedMenu {
+    background-color: var(--grey);
+    padding: 20px;
+    margin-bottom: 20px;
+
+    ul li {
+      list-style: none;
+      text-align: center;
+
+      & + li {
+        margin-top: 20px;
+      }
+
+      a {
+        text-decoration: none;
+        color: var(--white);
+      }
+
+      &:after {
+        content: '';
+        display: block;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 2px;
+        background-color: var(--white);
+        transform: scaleX(0);
+        transform-origin: bottom right;
+
+        transition: transform 0.2s ease;
+      }
+
+      &:hover:after {
+        transform: scaleX(1);
+        transform-origin: bottom left;
+      }
+    }
+  }
 `;
 
 export const SettingsIcon = styled.div`
@@ -68,6 +127,9 @@ export const SettingsIcon = styled.div`
     transition: color 0.2s ease;
 
     &:hover {
+      color: var(--white);
+    }
+    &.active {
       color: var(--white);
       transform: rotate(25deg);
     }
