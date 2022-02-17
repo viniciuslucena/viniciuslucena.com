@@ -15,7 +15,7 @@ export const Title = ({ label, from, to, subtitle }: TitleProps) => {
     font-family: 'Rubik';
     font-size: 62px;
     background-color: red;
-    background-image: linear-gradient(${from}, ${to});
+    background-image: linear-gradient(90deg, ${from}, ${to});
     background-size: 100%;
     background-repeat: repeat;
     -webkit-background-clip: text;
@@ -25,6 +25,10 @@ export const Title = ({ label, from, to, subtitle }: TitleProps) => {
     -webkit-font-smoothing: antialiased;
     -moz-font-smoothing: antialiased;
     margin-bottom: 15px;
+
+    @media only screen and (max-width: 768px) {
+      font-size: 36px;
+    }
   `;
 
   const SubtitleStyle = styled.p`

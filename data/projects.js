@@ -5,6 +5,6 @@ export const projects = [
     description: 'Meu site pessoal',
     url: 'https://github.com/viniciuslucena/viniciuslucena.com',
     img: 'images/projects/Personal-Website.png',
-    tech: ['next']
+    tech: ['next', 'styled-components']
   }
 ];

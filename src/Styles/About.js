@@ -37,6 +37,32 @@ export const PersonalResume = styled.div`
       }
     }
   }
+
+  @media only screen and (max-width: 768px) {
+    display: flex;
+    flex-direction: column !important;
+
+    .resume__image {
+      margin-bottom: 25px;
+      img {
+        width: 100%;
+      }
+    }
+
+    .resume__text {
+      text-align: left;
+    }
+
+    .resume__btn {
+      display: flex;
+      align-items: center;
+      justify-content: start;
+
+      a {
+        padding: 0;
+      }
+    }
+  }
 `;
 
 export const Career = styled.div`
