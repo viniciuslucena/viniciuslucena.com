@@ -70,6 +70,7 @@ export const HeaderStyles = styled.header`
       margin-top: 30px;
       width: 25px;
       filter: grayscale(1);
+      cursor: pointer;
 
       &.active {
         filter: grayscale(0);

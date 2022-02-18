@@ -25,7 +25,11 @@ const About = () => {
 
       <Header />
       <Container>
-        <Title label="About. Resume." from="#5b7fff" to="#33ccfc" />
+        {language === 'pt-BR' ? (
+          <Title label="Sobre. Carreira." from="#5b7fff" to="#33ccfc" />
+        ) : (
+          <Title label="About. Resume." from="#5b7fff" to="#33ccfc" />
+        )}
         <PersonalResume>
           <div className="resume__image">
             <img src="/images/avatar.jpeg" alt="Avatar" />

@@ -8,8 +8,12 @@ import { Title } from '../src/Components/Title';
 import { Container } from '../src/Styles/Container';
 
 import { projects } from '../data/projects';
+import { useContext } from 'react';
+import { GeneralContext } from '../src/Context/general';
 
 const Projects = () => {
+  const { language } = useContext(GeneralContext);
+
   return (
     <>
       <Head>
@@ -20,7 +24,11 @@ const Projects = () => {
 
       <Header />
       <Container>
-        <Title label="Work. Hobby. Studies." from="#ff6868" to="#ff68de" />
+        {language === 'pt-BR' ? (
+          <Title label="Trabalho. Hobby. Estudos." from="#ff6868" to="#ff68de" />
+        ) : (
+          <Title label="Work. Hobby. Studies." from="#ff6868" to="#ff68de" />
+        )}
         <div>
           {projects.map((project) => (
             <Project

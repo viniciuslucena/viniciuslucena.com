@@ -1,11 +1,15 @@
 import Head from 'next/head';
+import { useContext } from 'react';
 import { Footer } from '../src/Components/Footer';
 import { Header } from '../src/Components/Header';
 import { Title } from '../src/Components/Title';
+import { GeneralContext } from '../src/Context/general';
 
 import { Container } from '../src/Styles/Container';
 
 const Skills = () => {
+  const { language } = useContext(GeneralContext);
+
   return (
     <>
       <Head>
@@ -16,7 +20,11 @@ const Skills = () => {
 
       <Header />
       <Container>
-        <Title label="Skills." from="#45c270" to="#21cdc3" />
+        {language === 'pt-BR' ? (
+          <Title label="Habilidades." from="#45c270" to="#21cdc3" />
+        ) : (
+          <Title label="Skills." from="#45c270" to="#21cdc3" />
+        )}
       </Container>
       <Footer />
     </>
