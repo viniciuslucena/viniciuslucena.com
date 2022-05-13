@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import { useContext, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 
 import { Footer } from '../src/Components/Footer';
 import { Header } from '../src/Components/Header';
@@ -17,9 +17,11 @@ const Blog = () => {
   const [posts, setPosts] = useState([])
   const { language } = useContext(GeneralContext);
 
-  axios.get('https://dev.to/api/articles?username=viniciuslucena').then(response => {
-    setPosts(response.data);
-  })
+  useEffect(() => {
+    axios.get('https://dev.to/api/articles?username=viniciuslucena').then((response) => {
+      setPosts(response.data);
+    });
+  }, []);
 
   return (
     <>
