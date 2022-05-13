@@ -28,7 +28,7 @@ export const BlogTitle = styled.p`
 
   span {
     background-color: red;
-    background-image: linear-gradient(#fdc639, #ff7c60);
+    background-image: linear-gradient(#ff6868, #ff68de);
     background-size: 100%;
     background-repeat: repeat;
     -webkit-background-clip: text;

@@ -25,9 +25,17 @@ const Projects = () => {
       <Header />
       <Container>
         {language === 'pt-BR' ? (
-          <Title label="Trabalho. Hobby. Estudos." from="#ff6868" to="#ff68de" />
+          <Title
+            label="Trabalho. Hobby. Estudos."
+            from="#fdc639"
+            to="#ff7c60"
+          />
         ) : (
-          <Title label="Work. Hobby. Studies." from="#ff6868" to="#ff68de" />
+          <Title
+            label="Work. Hobby. Studies."
+            from="#fdc639"
+            to="#ff7c60"
+          />
         )}
         <div>
           {projects.map((project) => (

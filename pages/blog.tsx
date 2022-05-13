@@ -1,5 +1,6 @@
 import Head from 'next/head';
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
+
 import { Footer } from '../src/Components/Footer';
 import { Header } from '../src/Components/Header';
 import { Input } from '../src/Components/Input';
@@ -7,9 +8,18 @@ import { Title } from '../src/Components/Title';
 import { GeneralContext } from '../src/Context/general';
 
 import { Container } from '../src/Styles/Container';
+import { PostsContainer } from '../src/Styles/Blog'
+
+import axios from 'axios';
+import { Post } from '../src/Components/Post';
 
 const Blog = () => {
+  const [posts, setPosts] = useState([])
   const { language } = useContext(GeneralContext);
+
+  axios.get('https://dev.to/api/articles?username=viniciuslucena').then(response => {
+    setPosts(response.data);
+  })
 
   return (
     <>
@@ -24,20 +34,36 @@ const Blog = () => {
         {language === 'pt-BR' ? (
           <Title
             label="Pensamentos. Tutoriais. Dicas."
-            from="#fdc639"
-            to="#ff7c60"
-            subtitle="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pharetra hendrerit placerat. Nunc dictum nunc fermentum leo blandit porta."
+            from="#ff6868"
+            to="#ff68de"
+            subtitle={`Aqui você pode encontrar minhas ${posts.length} postagens na plataforma dev.to. Você encontra postagens sobre desenvolvimento web, carreira na área de T.I ou apenas alguns devaneios que eu decidi compartilhar.`}
           />
         ) : (
           <Title
             label="Thoughts. Tutorials. Tips."
-            from="#fdc639"
-            to="#ff7c60"
-            subtitle="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pharetra hendrerit placerat. Nunc dictum nunc fermentum leo blandit porta."
+            from="#ff6868"
+            to="#ff68de"
+            subtitle={`Here you can find all the ${posts.length} posts I wrote on the dev.to. You can read about web development, tech career or just some thoughts i decided to share.`}
           />
         )}
 
-        <Input type="text" placeholder="Search for posts" />
+        <Input type="text" disabled={true} placeholder="Search for posts" />
+
+        <PostsContainer>
+          {posts.map(post => (
+            <div key={post.id}>
+              <Post
+                title={post.title}
+                url={post.url}
+                likes={post.positive_reactions_count}
+                comments={post.comments_count}
+                reading_minutes={post.reading_time_minutes}
+                is_highlighted={false}
+                created_at={post.created_at}
+              />
+            </div>
+          ))}
+        </PostsContainer>
       </Container>
       <Footer />
     </>
