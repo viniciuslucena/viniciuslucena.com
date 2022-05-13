@@ -4,13 +4,14 @@ import { BsSearch } from 'react-icons/bs';
 type InputProps = {
   type: string;
   placeholder?: string;
+  disabled?: boolean;
 };
 
-export const Input = ({ placeholder, type }: InputProps) => {
+export const Input = ({ placeholder, type, disabled }: InputProps) => {
   return (
     <>
       <InputWrapper>
-        <input type={type} placeholder={placeholder} />
+        <input type={type} placeholder={placeholder} disabled={disabled} />
         <BsSearch />
       </InputWrapper>
 

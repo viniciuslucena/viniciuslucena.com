@@ -27,6 +27,7 @@ export const GlobalStyle = createGlobalStyle`
 
   :root {
     --background: #08070B;
+    --background-lighter: #3f3f42;
     --white: #FFFFFF;
     --grey: #212024;
 
