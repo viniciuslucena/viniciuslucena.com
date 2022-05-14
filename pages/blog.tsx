@@ -38,7 +38,7 @@ const Blog = () => {
             label="Pensamentos. Tutoriais. Dicas."
             from="#ff6868"
             to="#ff68de"
-            subtitle={`Aqui você pode encontrar minhas ${posts.length} postagens na plataforma dev.to. Você encontra postagens sobre desenvolvimento web, carreira na área de T.I ou apenas alguns devaneios que eu decidi compartilhar.`}
+            subtitle={`Aqui você pode encontrar minhas ${posts.length} postagens na plataforma dev.to. Você encontra postagens sobre desenvolvimento web, carreira na área de T.I ou apenas alguns pensamentos que eu decidi compartilhar.`}
           />
         ) : (
           <Title

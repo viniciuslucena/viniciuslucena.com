@@ -7,9 +7,40 @@ export const PostContainer = styled.a`
   text-decoration: none;
   padding: 2rem 0;
   border-bottom: 1px solid var(--background-lighter);
+  filter: grayscale(1);
+  transition: all 0.2s;
+
+  &:hover {
+    filter: grayscale(0);
+
+    h2 {
+      background-image: linear-gradient(#ff6868, #ff68de);
+      background-size: 100%;
+      background-repeat: repeat;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      -moz-background-clip: text;
+      -moz-text-fill-color: transparent;
+      -webkit-font-smoothing: antialiased;
+      -moz-font-smoothing: antialiased;
+    }
+  }
 
   h2 {
     margin-bottom: 0.5rem;
+    transition: background 0.1s;
+
+    /* &:hover {
+      background-image: linear-gradient(#ff6868, #ff68de);
+      background-size: 100%;
+      background-repeat: repeat;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      -moz-background-clip: text;
+      -moz-text-fill-color: transparent;
+      -webkit-font-smoothing: antialiased;
+      -moz-font-smoothing: antialiased;
+    } */
   }
 
   .postInfos {
