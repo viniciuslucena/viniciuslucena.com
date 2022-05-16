@@ -15,11 +15,13 @@ import { Post } from '../src/Components/Post';
 
 const Blog = () => {
   const [posts, setPosts] = useState([])
+  const [isLoading, setIsLoading] = useState(true);
   const { language } = useContext(GeneralContext);
 
   useEffect(() => {
     axios.get('https://dev.to/api/articles?username=viniciuslucena').then((response) => {
       setPosts(response.data);
+      setIsLoading(false)
     });
   }, []);
 
@@ -51,21 +53,23 @@ const Blog = () => {
 
         <Input type="text" disabled={true} placeholder="Search for posts" />
 
-        <PostsContainer>
-          {posts.map(post => (
-            <div key={post.id}>
-              <Post
-                title={post.title}
-                url={post.url}
-                likes={post.positive_reactions_count}
-                comments={post.comments_count}
-                reading_minutes={post.reading_time_minutes}
-                is_highlighted={false}
-                created_at={post.created_at}
-              />
-            </div>
-          ))}
-        </PostsContainer>
+        {!isLoading && (
+          <PostsContainer>
+            {posts.map(post => (
+              <div key={post.id}>
+                <Post
+                  title={post.title}
+                  url={post.url}
+                  likes={post.positive_reactions_count}
+                  comments={post.comments_count}
+                  reading_minutes={post.reading_time_minutes}
+                  is_highlighted={false}
+                  created_at={post.created_at}
+                />
+              </div>
+            ))}
+          </PostsContainer>
+        )}
       </Container>
       <Footer />
     </>
