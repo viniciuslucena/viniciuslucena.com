@@ -36,15 +36,15 @@ const Blog = () => {
         {language === 'pt-BR' ? (
           <Title
             label="Pensamentos. Tutoriais. Dicas."
-            from="#ff6868"
-            to="#ff68de"
+            from="#FF6868"
+            to="#FF68DE"
             subtitle={`Aqui você pode encontrar minhas ${posts.length} postagens na plataforma dev.to. Você encontra postagens sobre desenvolvimento web, carreira na área de T.I ou apenas alguns pensamentos que eu decidi compartilhar.`}
           />
         ) : (
           <Title
             label="Thoughts. Tutorials. Tips."
-            from="#ff6868"
-            to="#ff68de"
+            from="#FF6868"
+            to="#FF68DE"
             subtitle={`Here you can find all the ${posts.length} posts I wrote on the dev.to. You can read about web development, tech career or just some thoughts i decided to share.`}
           />
         )}
