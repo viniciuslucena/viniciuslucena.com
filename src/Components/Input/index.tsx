@@ -5,7 +5,7 @@ type InputProps = {
   type: string;
   placeholder?: string;
   disabled?: boolean;
-  onChange: () => void;
+  onChange: (e: React.FormEvent<HTMLInputElement>) => void
 };
 
 export const Input = ({ placeholder, type, disabled, onChange }: InputProps) => {
