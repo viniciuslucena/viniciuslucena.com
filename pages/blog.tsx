@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import { useContext, useEffect, useState } from 'react';
+import { useCallback, useContext, useEffect, useState } from 'react';
 
 import { Footer } from '../src/Components/Footer';
 import { Header } from '../src/Components/Header';
@@ -8,19 +8,35 @@ import { Title } from '../src/Components/Title';
 import { GeneralContext } from '../src/Context/general';
 
 import { Container } from '../src/Styles/Container';
-import { PostsContainer } from '../src/Styles/Blog'
+import { PostsContainer, SpinnerContainer } from '../src/Styles/Blog'
 
 import axios from 'axios';
 import { Post } from '../src/Components/Post';
 
+import { TailSpin } from 'react-loader-spinner'
+
 const Blog = () => {
-  const [posts, setPosts] = useState([])
+  const [posts, setPosts] = useState([]);
+  const [filteredPosts, setFilteredPosts] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const { language } = useContext(GeneralContext);
+
+  const handleFilter = (event) => {
+    const searchWord = event.target.value;
+    const newFilter = posts.filter((value) => {
+      return value.title.toLowerCase().includes(searchWord.toLowerCase());
+    })
+    if (searchWord === '') {
+      setFilteredPosts(posts)
+    } else {
+      setFilteredPosts(newFilter)
+    }
+  }
 
   useEffect(() => {
     axios.get('https://dev.to/api/articles?username=viniciuslucena').then((response) => {
       setPosts(response.data);
+      setFilteredPosts(response.data);
       setIsLoading(false)
     });
   }, []);
@@ -51,11 +67,11 @@ const Blog = () => {
           />
         )}
 
-        <Input type="text" disabled={true} placeholder="Search for posts" />
+        <Input type="text" placeholder="Search for posts" onChange={handleFilter} />
 
-        {!isLoading && (
+        {!isLoading ? (
           <PostsContainer>
-            {posts.map(post => (
+            {filteredPosts.slice(0, 15).map(post => (
               <div key={post.id}>
                 <Post
                   title={post.title}
@@ -69,6 +85,10 @@ const Blog = () => {
               </div>
             ))}
           </PostsContainer>
+        ) : (
+          <SpinnerContainer>
+            <TailSpin ariaLabel="loading-indicator" color="#00BFFF" height='50px' width='50px' />
+          </SpinnerContainer>
         )}
       </Container>
       <Footer />

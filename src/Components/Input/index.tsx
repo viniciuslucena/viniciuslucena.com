@@ -5,13 +5,14 @@ type InputProps = {
   type: string;
   placeholder?: string;
   disabled?: boolean;
+  onChange: () => void;
 };
 
-export const Input = ({ placeholder, type, disabled }: InputProps) => {
+export const Input = ({ placeholder, type, disabled, onChange }: InputProps) => {
   return (
     <>
       <InputWrapper>
-        <input type={type} placeholder={placeholder} disabled={disabled} />
+        <input type={type} placeholder={placeholder} disabled={disabled} onChange={onChange} />
         <BsSearch />
       </InputWrapper>
 
