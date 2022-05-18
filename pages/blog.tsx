@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import { useCallback, useContext, useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 
 import { Footer } from '../src/Components/Footer';
 import { Header } from '../src/Components/Header';
@@ -21,8 +21,8 @@ const Blog = () => {
   const [isLoading, setIsLoading] = useState(true);
   const { language } = useContext(GeneralContext);
 
-  const handleFilter = (event) => {
-    const searchWord = event.target.value;
+  const handleFilter = (event: React.FormEvent<HTMLInputElement>) => {
+    const searchWord = event.currentTarget.value;
     const newFilter = posts.filter((value) => {
       return value.title.toLowerCase().includes(searchWord.toLowerCase());
     })
