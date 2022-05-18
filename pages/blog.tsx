@@ -8,10 +8,12 @@ import { Title } from '../src/Components/Title';
 import { GeneralContext } from '../src/Context/general';
 
 import { Container } from '../src/Styles/Container';
-import { PostsContainer } from '../src/Styles/Blog'
+import { PostsContainer, SpinnerContainer } from '../src/Styles/Blog'
 
 import axios from 'axios';
 import { Post } from '../src/Components/Post';
+
+import { TailSpin } from 'react-loader-spinner'
 
 const Blog = () => {
   const [posts, setPosts] = useState([])
@@ -53,7 +55,7 @@ const Blog = () => {
 
         <Input type="text" disabled={true} placeholder="Search for posts" />
 
-        {!isLoading && (
+        {!isLoading ? (
           <PostsContainer>
             {posts.map(post => (
               <div key={post.id}>
@@ -69,6 +71,10 @@ const Blog = () => {
               </div>
             ))}
           </PostsContainer>
+        ) : (
+          <SpinnerContainer>
+            <TailSpin ariaLabel="loading-indicator" color="#00BFFF" height='50px' width='50px' />
+          </SpinnerContainer>
         )}
       </Container>
       <Footer />
