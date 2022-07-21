@@ -2,19 +2,16 @@ import { Badge, PostContainer } from './styles'
 
 import { FcLike, FcComments } from 'react-icons/fc'
 
-type PostProps = {
+export type PostProps = {
   title: string;
-  description?: string;
   url: string;
-  img?: string;
   likes: number;
   comments: number;
   created_at: string;
   reading_minutes: number;
-  is_highlighted: boolean;
 }
 
-export const Post = ({ title, description, url, img, likes, comments, created_at, reading_minutes, is_highlighted }: PostProps) => {
+export const Post = ({ title, url, likes, comments, created_at, reading_minutes }: PostProps) => {
   return (
     // <a href='#' target='_blank'>
     <PostContainer href={url} target='_blank'>

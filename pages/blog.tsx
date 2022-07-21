@@ -6,17 +6,17 @@ import { Header } from '../src/Components/Header';
 import { Input } from '../src/Components/Input';
 import { Title } from '../src/Components/Title';
 import { GeneralContext } from '../src/Context/general';
+import { Post, PostProps } from '../src/Components/Post';
 
 import { Container } from '../src/Styles/Container';
 import { PostsContainer, SpinnerContainer } from '../src/Styles/Blog'
 
-import axios from 'axios';
-import { Post } from '../src/Components/Post';
+import PostsService from '../src/Services/PostsService';
 
 import { TailSpin } from 'react-loader-spinner'
 
 const Blog = () => {
-  const [posts, setPosts] = useState([]);
+  const [posts, setPosts] = useState<PostProps[]>([]);
   const [filteredPosts, setFilteredPosts] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const { language } = useContext(GeneralContext);
@@ -34,11 +34,20 @@ const Blog = () => {
   }
 
   useEffect(() => {
-    axios.get('https://dev.to/api/articles?username=viniciuslucena').then((response) => {
-      setPosts(response.data);
-      setFilteredPosts(response.data);
-      setIsLoading(false)
-    });
+    async function loadPosts() {
+      try {
+        setIsLoading(true);
+        const response = await PostsService.listPosts();
+        setPosts(response);
+        setFilteredPosts(response);
+      } catch {
+        return [];
+      } finally {
+        setIsLoading(false);
+      }
+    }
+
+    loadPosts();
   }, []);
 
   return (
@@ -79,7 +88,6 @@ const Blog = () => {
                   likes={post.positive_reactions_count}
                   comments={post.comments_count}
                   reading_minutes={post.reading_time_minutes}
-                  is_highlighted={false}
                   created_at={post.created_at}
                 />
               </div>
