@@ -5,7 +5,7 @@ import { Header } from '../src/Components/Header';
 import { Project } from '../src/Components/Project';
 import { Title } from '../src/Components/Title';
 
-import { Container } from '../src/Styles/Container';
+import { Container, ProjectsGrid } from '../src/Styles/Container';
 
 import { projects } from '../data/projects';
 import { useContext } from 'react';
@@ -38,16 +38,16 @@ const Projects = () => {
           />
         )}
         <div>
-          {projects.map((project) => (
-            <Project
-              key={project.key}
-              title={project.title}
-              description={project.description}
-              url={project.url}
-              img={project.img}
-              tech={project.tech}
-            />
-          ))}
+          <ProjectsGrid>
+            {projects.map((project) => (
+              <Project
+                key={project.key}
+                title={project.title}
+                description={project.description}
+                url={project.url}
+              />
+            ))}
+          </ProjectsGrid>
         </div>
       </Container>
       <Footer />

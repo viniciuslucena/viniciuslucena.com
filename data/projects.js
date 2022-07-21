@@ -4,7 +4,11 @@ export const projects = [
     title: 'Personal Website',
     description: 'Meu site pessoal',
     url: 'https://github.com/viniciuslucena/viniciuslucena.com',
-    img: 'images/projects/Personal-Website.png',
-    tech: ['next', 'styled-components']
-  }
+  },
+  {
+    id: 1,
+    title: 'MyContacts',
+    description: 'Projeto do Módulo 1 do curso JStack',
+    url: 'https://github.com/viniciuslucena/my-contacts',
+  },
 ];
