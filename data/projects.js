@@ -4,6 +4,7 @@ export const projects = [
     title: 'Personal Website',
     description: 'Meu site pessoal',
     url: 'https://github.com/viniciuslucena/viniciuslucena.com',
+    demo: 'https://viniciuslucena.com/'
   },
   {
     id: 1,

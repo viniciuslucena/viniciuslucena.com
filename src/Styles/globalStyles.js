@@ -10,14 +10,6 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   @font-face {
-    font-family: "Neuzeit Grotesk";
-    src: url("/fonts/NeuzeitGro-Bol.ttf");
-    font-style: bold;
-    font-weight: 700;
-    font-display: swap;
-  }
-
-  @font-face {
     font-family: "Rubik";
     src: url("/fonts/Rubik.ttf");
     font-style: bold;
