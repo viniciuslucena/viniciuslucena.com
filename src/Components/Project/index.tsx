@@ -17,14 +17,14 @@ export const Project = ({ title, description, url, demoLink, ...rest }: ProjectP
       </div>
 
       <ProjectButtonContainer>
-        <ProjectButton href={url} target="_blank" rel="noreferrer">
-          <p>Source</p> <FiExternalLink />
-        </ProjectButton>
         {demoLink && (
-          <ProjectButton>
+          <ProjectButton href={demoLink} target="_blank" rel="noreferrer">
             <p>Demo</p> <FiExternalLink />
           </ProjectButton>
         )}
+        <ProjectButton href={url} target="_blank" rel="noreferrer">
+          <p>Source</p> <FiExternalLink />
+        </ProjectButton>
       </ProjectButtonContainer>
     </ProjectWrapper>
   );

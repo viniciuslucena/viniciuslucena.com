@@ -45,6 +45,7 @@ const Projects = () => {
                 title={project.title}
                 description={project.description}
                 url={project.url}
+                demoLink={project?.demo}
               />
             ))}
           </ProjectsGrid>
