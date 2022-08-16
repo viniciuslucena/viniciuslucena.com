@@ -5,7 +5,8 @@ import { Header } from '../src/Components/Header';
 import { Project } from '../src/Components/Project';
 import { Title } from '../src/Components/Title';
 
-import { Container, ProjectsGrid } from '../src/Styles/Container';
+import { Container } from '../src/Styles/Container';
+import { ProjectsGrid } from '../src/Styles/Projects';
 
 import { projects } from '../data/projects';
 import { useContext } from 'react';
