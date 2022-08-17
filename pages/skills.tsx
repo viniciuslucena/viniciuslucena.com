@@ -30,16 +30,16 @@ const Skills = () => {
 
         <SkillsContainer>
           <SkillsGrid>
-            <img src="images/react.svg" className='skill-logo' onClick={() => setSkill('react')} />
-            <img src="images/figma.svg" className='skill-logo' onClick={() => setSkill('figma')} />
-            <img src="images/firebase.svg" className='skill-logo' onClick={() => setSkill('firebase')} />
-            <img src="images/laravel.svg" className='skill-logo' onClick={() => setSkill('laravel')} />
-            <img src="images/jest.svg" className='skill-logo' onClick={() => setSkill('jest')} />
-            <img src="images/next.svg" className='skill-logo' onClick={() => setSkill('next')} />
-            <img src="images/node.svg" className='skill-logo' onClick={() => setSkill('node')} />
-            <img src="images/postgresql.svg" className='skill-logo' onClick={() => setSkill('postgres')} />
-            <img src="images/sass.svg" className='skill-logo' onClick={() => setSkill('sass')} />
-            <img src="images/styled-components.svg" className='skill-logo' onClick={() => setSkill('styled-components')} />
+            <img src="images/react.svg" className='skill-logo' onMouseEnter={() => setSkill('react')} onMouseLeave={() => setSkill('')} />
+            <img src="images/figma.svg" className='skill-logo' onMouseEnter={() => setSkill('figma')} onMouseLeave={() => setSkill('')} />
+            <img src="images/firebase.svg" className='skill-logo' onMouseEnter={() => setSkill('firebase')} onMouseLeave={() => setSkill('')} />
+            <img src="images/laravel.svg" className='skill-logo' onMouseEnter={() => setSkill('laravel')} onMouseLeave={() => setSkill('')} />
+            <img src="images/jest.svg" className='skill-logo' onMouseEnter={() => setSkill('jest')} onMouseLeave={() => setSkill('')} />
+            <img src="images/next.svg" className='skill-logo' onMouseEnter={() => setSkill('next')} onMouseLeave={() => setSkill('')} />
+            <img src="images/node.svg" className='skill-logo' onMouseEnter={() => setSkill('node')} onMouseLeave={() => setSkill('')} />
+            <img src="images/postgresql.svg" className='skill-logo' onMouseEnter={() => setSkill('postgres')} onMouseLeave={() => setSkill('')} />
+            <img src="images/sass.svg" className='skill-logo' onMouseEnter={() => setSkill('sass')} onMouseLeave={() => setSkill('')} />
+            <img src="images/styled-components.svg" className='skill-logo' onMouseEnter={() => setSkill('styled-components')} onMouseLeave={() => setSkill('')} />
           </SkillsGrid>
           <SkillDescription>
             {skill === 'react' && (
