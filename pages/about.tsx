@@ -42,9 +42,7 @@ const About = () => {
                 como desenvolvedor desde 2021.
                 <br />
                 <br />
-                Atualmente trabalho como <span>desenvolvedor front-end</span> na Innvo Digital, uma
-                consultoria que presta serviços para diversas empresas, incluindo a <span>C&A</span>
-                , que é onde eu trabalho diariamente.
+                Sou uma pessoa muito esforçada e de fácil adaptação. Na última empresa em que trabalhei tive que aperfeiçoar meus conhecimentos no back-end, aprender desenvolvimento blockchain e um pouco de machine learning. Tenho experiência com desenvolvimento em grandes empresas, sendo a maior delas a C&A, onde eu desenvolvi junto com um time de machine learning a interface para o Chatbot da C&A e um CMS para o SAC.
               </p>
             ) : (
               <p className="resume__text">
@@ -52,9 +50,8 @@ const About = () => {
                 I am a student of the Bachelor&apos;s Degree in Computer Science at UFAPE and I have
                 been working as a developer since 2021.
                 <br />
-                <br />I currently work as a <span>front-end developer</span> at Innvo Digital, a
-                consultancy that provides services to several companies, including <span>C&A</span>,
-                which is where I work daily.
+                <br />
+                I am a very hardworking and easily adaptable person. At the last company I worked for, I had to improve my knowledge on the backend, learn blockchain development and a little bit of machine learning. I have experience with development in large companies, the largest of which is C&A, where I developed, together with a machine learning team, the interface for C&A Chatbot and a CMS for SAC.
               </p>
             )}
             <div className="resume__btn">

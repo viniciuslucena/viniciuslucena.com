@@ -4,6 +4,7 @@ export const jobs = [
     company: 'Innvo Digital',
     companyUrl: 'https://www.innvo.com.br/',
     startDate: '2021-12-08',
+    endDate: '2022-10-04',
     location: 'São Paulo, São Paulo'
   },
   {

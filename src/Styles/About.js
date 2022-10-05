@@ -8,6 +8,10 @@ export const PersonalResume = styled.div`
     border-radius: 20px;
   }
 
+  .resume__image {
+    display: inline-block;
+  }
+
   .resume {
     margin-left: 25px;
     line-height: 32px;
