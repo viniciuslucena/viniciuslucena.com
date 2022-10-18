@@ -55,7 +55,7 @@ const About = () => {
               </p>
             )}
             <div className="resume__btn">
-              <a href="./resume/cv-vinicius-lucena.pdf" download="CV Vinícius Lucena">
+              <a href="resume/cv-vinicius-lucena.pdf" download="CV Vinícius Lucena">
                 <HiOutlineFolderDownload /> Download CV
               </a>
             </div>
