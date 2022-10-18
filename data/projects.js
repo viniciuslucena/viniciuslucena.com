@@ -12,4 +12,11 @@ export const projects = [
     description: 'Projeto do Módulo 1 do curso JStack',
     url: 'https://github.com/viniciuslucena/my-contacts',
   },
+  {
+    id: 2,
+    title: 'Amazon Clone',
+    description: 'Clone do site da Amazon. Feito utilizando NextJS, Tailwind CSS, Firebase, Redux e Strapi',
+    url: 'https://github.com/viniciuslucena/amazon-clone',
+    demo: 'https://amazon-clone-sepia-nine.vercel.app/'
+  },
 ];
